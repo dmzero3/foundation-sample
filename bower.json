@@ -1,0 +1,19 @@
+{
+  "name": "fitness",
+  "version": "0.0.0",
+  "authors": [
+    "松浦 大 <matsuura_dai@cyberagent.co.jp>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.2"
+  }
+}
