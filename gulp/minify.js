@@ -3,11 +3,16 @@
 var gulp = require('gulp');
 var plugin = require('gulp-load-plugins')();
 
+var path = {
+  src: './src/',
+  dist: './dist/'
+};
+
 gulp.task('usemin', function(){
-  gulp.src('src/**/*.html')
+  gulp.src(path.src + '**/*.html')
   .pipe(plugin.usemin({
     js: [plugin.uglify()],
     css: [plugin.minifyCss()]
   }))
-  .pipe(gulp.dest('dist/'));
+  .pipe(gulp.dest(path.dist));
 });

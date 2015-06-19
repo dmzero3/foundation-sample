@@ -7,6 +7,11 @@ var mainBowerFiles = require('main-bower-files');
 var plugin = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 
+var path = {
+  src: './src/',
+  dist: './dist/'
+};
+
 
 var server = function(env){
   return function(){
@@ -25,14 +30,13 @@ gulp.task('server:prod', server('dist'));
 
 
 
-gulp.task('watch', ['server'], function(){
+gulp.task('watch', ['sass', 'server'], function(){
 	var glob = [
-		'./css/sass/*.scss',
-		'./css/sass/**/*.scss',
-		'./*.html',
-		'./**/*.html'
+		path.src + 'css/sass/*.scss',
+		path.src + 'css/sass/**/*.scss',
+    path.src + 'js/*.js',
+		path.src + '*.html',
+		path.src + '**/*.html'
 	];
 	gulp.watch(glob, ['sass', browserSync.reload]);
 });
-
-// TODO: ディレクトリを変数化

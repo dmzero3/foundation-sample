@@ -1,3 +1,3 @@
 (function(d, w){
-  alert('load');
+  alert('load!!');
 })(document, window);

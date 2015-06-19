@@ -3,8 +3,13 @@
 var gulp = require('gulp');
 var plugin = require('gulp-load-plugins')();
 
+var path = {
+  src: './src/',
+  dist: './dist/'
+};
+
 gulp.task('sass', function(){
-  gulp.src('src/css/sass/**/*.scss')
+  gulp.src(path.src + 'css/sass/**/*.scss')
   .pipe(plugin.sass())
-  .pipe(gulp.dest('src/css/'));
+  .pipe(gulp.dest(path.src + 'css/'));
 });
