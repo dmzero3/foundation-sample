@@ -15,3 +15,8 @@ gulp.task('bower_concat', function(){
   .pipe(plugin.concat('vendor.js'))
   .pipe(gulp.dest(path.src + 'js/'));
 });
+
+gulp.task('jshint', function(){
+  gulp.src(path.src + 'js/*.js')
+  .pipe(plugin.jshint());
+});

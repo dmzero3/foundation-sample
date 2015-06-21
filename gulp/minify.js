@@ -11,7 +11,7 @@ var path = {
 gulp.task('usemin', function(){
   gulp.src(path.src + '**/*.html')
   .pipe(plugin.usemin({
-    js: [plugin.uglify()],
+    js: [plugin.uglify().on('error', function(e) { console.log('\x07',e.message); return this.end(); })],
     css: [plugin.minifyCss()]
   }))
   .pipe(gulp.dest(path.dist));
