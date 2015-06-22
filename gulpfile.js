@@ -7,16 +7,13 @@ var mainBowerFiles = require('main-bower-files');
 var plugin = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 
-var path = {
-  src: './src/',
-  dist: './dist/'
-};
+var pkg = require('./package.json');
 
 
 var server = function(env){
   return function(){
     if(!env){
-      env = './src/'
+      env = pkg.path.src
     }
     browserSync({
       server: {
@@ -32,14 +29,14 @@ gulp.task('server:dist',['usemin'], server('dist'));
 var watch = function(env){
   return function(){
     if(env === ''){
-      env = './src/'
+      env = pkg.path.src
     }
     var glob = [
-  		path.src + 'css/sass/*.scss',
-  		path.src + 'css/sass/**/*.scss',
-      path.src + 'js/*.js',
-  		path.src + '*.html',
-  		path.src + '**/*.html'
+  		pkg.path.src + '/css/sass/*.scss',
+  		pkg.path.src + '/css/sass/**/*.scss',
+      pkg.path.src + '/js/*.js',
+  		pkg.path.src + '/*.html',
+  		pkg.path.src + '/**/*.html'
   	];
     gulp.watch(glob, ['sass', browserSync.reload]);
   }

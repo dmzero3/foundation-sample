@@ -4,19 +4,15 @@ var gulp = require('gulp');
 var mainBowerFiles = require('main-bower-files');
 var plugin = require('gulp-load-plugins')();
 
-
-var path = {
-  src: './src/',
-  dist: './dist/'
-};
+var pkg = require('../package.json');
 
 gulp.task('bower_concat', function(){
   gulp.src(mainBowerFiles())
   .pipe(plugin.concat('vendor.js'))
-  .pipe(gulp.dest(path.src + 'js/'));
+  .pipe(gulp.dest(pkg.path.src + '/js/'));
 });
 
 gulp.task('jshint', function(){
-  gulp.src(path.src + 'js/*.js')
+  gulp.src(pkg.path.src + '/js/*.js')
   .pipe(plugin.jshint());
 });
