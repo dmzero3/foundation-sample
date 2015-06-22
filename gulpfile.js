@@ -47,5 +47,3 @@ gulp.task('watch:dist', ['sass', 'server:dist'], watch('dist'));
 
 // bower_concat時にfoundation内のCSSを読み込ませない処理を追加するか
 // src配下を修正したときに都度、ビルドしてリロードさせるか
-// TODO: Add gulp-plumber
-// TODO: Add gulp-notify

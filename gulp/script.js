@@ -13,6 +13,7 @@ gulp.task('bower_concat', function(){
 });
 
 gulp.task('jshint', function(){
-  gulp.src(pkg.path.src + '/js/*.js')
-  .pipe(plugin.jshint());
+  gulp.src(pkg.path.src + '/js/**/*.js')
+  .pipe(plugin.jshint('.jshintrc'))
+  .pipe(plugin.jshint.reporter('jshint-stylish'));
 });
