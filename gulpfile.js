@@ -45,17 +45,7 @@ var watch = function(env){
 gulp.task('watch', ['sass', 'server'], watch());
 gulp.task('watch:dist', ['sass', 'server:dist'], watch('dist'));
 
-// gulp.task('watch', ['sass', 'server'], function(){
-// 	var glob = [
-// 		path.src + 'css/sass/*.scss',
-// 		path.src + 'css/sass/**/*.scss',
-//     path.src + 'js/*.js',
-// 		path.src + '*.html',
-// 		path.src + '**/*.html'
-// 	];
-// 	gulp.watch(glob, ['sass', browserSync.reload]);
-// });
-
-
 // bower_concat時にfoundation内のCSSを読み込ませない処理を追加するか
 // src配下を修正したときに都度、ビルドしてリロードさせるか
+// TODO: Add gulp-plumber
+// TODO: Add gulp-notify
