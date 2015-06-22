@@ -1,3 +1,5 @@
-(function(d, w){
-  alert('load!!');
-})(document, window);
+(function($, d, w){
+
+  $(document).foundation();
+
+})(jQuery, document, window);
