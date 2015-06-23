@@ -28,15 +28,15 @@ gulp.task('server:dist',['usemin'], server('dist'));
 
 var watch = function(env){
   return function(){
-    if(env === ''){
+    if(!env){
       env = pkg.path.src
     }
     var glob = [
-  		pkg.path.src + '/css/sass/*.scss',
-  		pkg.path.src + '/css/sass/**/*.scss',
-      pkg.path.src + '/js/*.js',
-  		pkg.path.src + '/*.html',
-  		pkg.path.src + '/**/*.html'
+  		env + '/css/sass/*.scss',
+  		env + '/css/sass/**/*.scss',
+      env + '/js/*.js',
+  		env + '/*.html',
+  		env + '/**/*.html'
   	];
     gulp.watch(glob, ['sass', browserSync.reload]);
   }
