@@ -12,5 +12,9 @@ gulp.task('sass', function(){
   }))
   .pipe(plugin.using())
   .pipe(plugin.sass())
+  .pipe(plugin.autoprefixer({
+    browser: 'last 2 versions',
+    cascade: false
+  }))
   .pipe(gulp.dest(pkg.path.src + '/css/'));
 });
